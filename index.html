@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Detector de Imagens COCO-SSD</title>
+    <link rel="stylesheet" href="styles.css">
+    <!-- Importando fontes do Google -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <!-- Importando TensorFlow.js e COCO-SSD -->
+    <script src="https://cdn.jsdelivr.net/npm/@tensorflow/tfjs"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@tensorflow-models/coco-ssd"></script>
+</head>
+<body>
+    <header>
+        <div class="container">
+            <h1>Detector de Imagens COCO-SSD</h1>
+            <p class="subtitle">Detecção de objetos em tempo real com TensorFlow.js</p>
+        </div>
+    </header>
+
+    <main class="container">
+        <section class="intro">
+            <div class="intro-text">
+                <h2>O que é COCO-SSD?</h2>
+                <p>COCO-SSD é um modelo de detecção de objetos pré-treinado que pode identificar 80 classes diferentes de objetos em imagens ou vídeo em tempo real.</p>
+                <p>Esta demonstração utiliza TensorFlow.js para executar o modelo diretamente no seu navegador!</p>
+            </div>
+            <div class="intro-image">
+                <img src="https://tensorflow.org/images/tf_logo_social.png" alt="TensorFlow Logo" class="tf-logo">
+            </div>
+        </section>
+
+        <section class="detection-panel">
+            <div class="tabs">
+                <button class="tab-btn active" data-tab="image">Upload de Imagem</button>
+                <button class="tab-btn" data-tab="webcam">Webcam</button>
+            </div>
+
+            <div class="tab-content">
+                <div class="tab-pane active" id="image-tab">
+                    <div class="upload-area" id="upload-area">
+                        <div class="upload-icon">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path>
+                                <polyline points="17 8 12 3 7 8"></polyline>
+                                <line x1="12" y1="3" x2="12" y2="15"></line>
+                            </svg>
+                        </div>
+                        <p>Arraste uma imagem ou clique para fazer upload</p>
+                        <input type="file" id="file-input" accept="image/*" hidden>
+                        <button class="upload-btn">Selecionar Imagem</button>
+                    </div>
+                </div>
+                <div class="tab-pane" id="webcam-tab">
+                    <div class="webcam-container">
+                        <p>Clique no botão abaixo para iniciar a webcam</p>
+                        <button class="webcam-btn" id="webcam-btn">Iniciar Webcam</button>
+                    </div>
+                </div>
+            </div>
+
+            <div class="result-container" id="result-container">
+                <div class="loading-container" id="loading-model">
+                    <div class="spinner"></div>
+                    <p>Carregando modelo COCO-SSD...</p>
+                </div>
+                
+                <div class="canvas-container" id="canvas-container" style="display: none;">
+                    <video id="webcam" autoplay muted style="display: none;"></video>
+                    <canvas id="output-canvas"></canvas>
+                </div>
+                
+                <div class="detections-list" id="detections-list">
+                    <h3>Objetos Detectados</h3>
+                    <div id="detections-items" class="detections-items">
+                        <p class="no-detections">Nenhum objeto detectado ainda</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="container">
+            <p>Desenvolvido com TensorFlow.js e COCO-SSD</p>
+            <p>
+                <a href="https://github.com/tensorflow/tfjs-models/tree/master/coco-ssd" target="_blank">
+                    Documentação do COCO-SSD
+                </a>
+            </p>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
