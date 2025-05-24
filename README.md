@@ -266,8 +266,9 @@ Este projeto está sob a licença MIT. Veja o arquivo [LICENSE](LICENSE) para ma
 **Gabriel Fernandes**
 
 - GitHub: [@gabrielfernanp](https://github.com/gabrielfernanp)
-- LinkedIn: [Seu LinkedIn]
-- Email: [seu.email@exemplo.com]
+- LinkedIn: [https://www.linkedin.com/feed/](https://www.linkedin.com/in/gabriel-fernandes-pereira/)
+- Email: gabrielfp.developer@gmail.com
+- Prof. MsC. Otávio Lube
 
 ---
 
